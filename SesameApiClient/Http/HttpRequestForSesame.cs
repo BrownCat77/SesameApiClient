@@ -4,15 +4,8 @@ using SesameApiClient.Entities;
 
 namespace SesameApiClient.Http
 {
-    public abstract class HttpRequestForSesame : HttpRequestBase
-    {
-        public HttpRequestForSesame(ConnectionEntity connection) : base(connection)
-        {
-        }
-    }
-
     #region デバイスリスト取得
-    public class HttpRequest_GetSesameList : HttpRequestForSesame
+    public class HttpRequest_GetSesameList : HttpRequestBase
     {
         public HttpRequest_GetSesameList(ConnectionEntity connection) : base(connection)
         {
@@ -33,7 +26,7 @@ namespace SesameApiClient.Http
 
 
     #region デバイスステータス取得
-    public class HttpRequest_GetSesameStatus : HttpRequestForSesame
+    public class HttpRequest_GetSesameStatus : HttpRequestBase
     {
         public HttpRequest_GetSesameStatus(ConnectionEntity connection) : base(connection)
         {
@@ -58,7 +51,7 @@ namespace SesameApiClient.Http
     #endregion
 
     #region コマンド実行
-    public class HttpRequest_ControlSesame : HttpRequestForSesame
+    public class HttpRequest_ControlSesame : HttpRequestBase
     {
         public HttpRequest_ControlSesame(ConnectionEntity connection) : base(connection)
         {
@@ -88,7 +81,7 @@ namespace SesameApiClient.Http
     #endregion
 
     #region コマンド結果問い合わせ
-    public class HttpRequest_QueryExecutionResult : HttpRequestForSesame
+    public class HttpRequest_QueryExecutionResult : HttpRequestBase
     {
         public HttpRequest_QueryExecutionResult(ConnectionEntity connection) : base(connection)
         {
